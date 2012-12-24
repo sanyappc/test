@@ -56,7 +56,7 @@ if form.getvalue('submit'):
 	else:
 		surname = 'not specified'
 	log = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')+\
-		' surname: '+surname+' result: '+str(k)+\
+		' surname: '+surname+': result: '+str(k)+\
 		'/'+str(c)+'/'+str(n-1)+' - '+str(100*k/float(n-1))+'%\n'
 	if exists(lfile) and (getsize(lfile) < 1024 * 1024):
 		open(lfile,'a+').write(log)
