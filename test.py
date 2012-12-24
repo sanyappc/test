@@ -50,9 +50,13 @@ if form.getvalue('submit'):
 		n+=1
 	print "\t\t<h1> Result is "+str(k)+"/"+str(n-1)+" &#8212; "+\
 		str(100*k/float(n-1))+"% </h1>"
-	#let's to log without logging and without rotation
+	#let's log without logging and without rotation
+	if form.getvalue('surname'):
+		surname = form.getvalue('surname')
+	else:
+		surname = 'not specified'
 	log = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')+\
-		' surname: '+form.getvalue('surname')+' result: '+str(k)+\
+		' surname: '+surname+' result: '+str(k)+\
 		'/'+str(c)+'/'+str(n-1)+' - '+str(100*k/float(n-1))+'%\n'
 	if exists(lfile) and (getsize(lfile) < 1024 * 1024):
 		open(lfile,'a+').write(log)
