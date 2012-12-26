@@ -52,8 +52,7 @@ if form.getvalue('submit'):
 				hashtuple += (int(ans[0]),)
 				if getanswer(n,int(ans[0])) == int(ans[1]):
 					k+=1
-			else:
-				break
+				#I need to optimise this
 			n+=1
 		if c == (n-1):
 			if form.getvalue('hidden') == gethash(hashtuple):
