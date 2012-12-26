@@ -31,6 +31,9 @@ cgitb.enable(display=0, logdir=ldir)
 form = cgi.FieldStorage()
 
 print "Content-Type: text/html"
+print "Cache-Control: no-cache, no-store, max-age=0, must-revalidate"
+print "Pragma: no-cache"
+print "Expires: Fri, 01 Jan 1990 00:00:00 GMT"
 print
 print "<!doctype html>"
 print "<html>"
@@ -76,7 +79,7 @@ if form.getvalue('submit'):
 else:
 	n = 1
 	hashtuple = ()
-	print '\t\t<form action="/cgi-bin/test" method="POST">'
+	print '\t\t<form action="/cgi-bin/test" method="POST" autocomplete="off">'
 	while getexistence(n):
 		f,i = getquestion(n)
 		hashtuple += (i,)
@@ -93,13 +96,6 @@ else:
 	print "\t\t\t<p>"
 	print '\t\t\t\t<input type="hidden" name="hidden" value="'+gethash(hashtuple)+'">'
 	print '\t\t\t\t<input type="hidden" id="refreshed" value="no">'
-	print '\t\t\t\t<script type="text/javascript">'
-	print '\t\t\t\t\tonload=function(){'
-	print '\t\t\t\t\t\tvar e=document.getElementById("refreshed");'
-	print '\t\t\t\t\t\tif(e.value=="no")e.value="yes";'
-	print '\t\t\t\t\t\telse{e.value="no";location.reload();}'
-	print '\t\t\t\t\t}'
-	print '\t\t\t\t</script>'
 	print '\t\t\t\t<input type="submit" name="submit" value="check!"/>'
 	print "\t\t\t</p>"
 	print '\t\t</form>'
