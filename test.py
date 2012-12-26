@@ -31,6 +31,7 @@ cgitb.enable(display=0, logdir=ldir)
 form = cgi.FieldStorage()
 
 print "Content-Type: text/html"
+print "Cache-Control: no-cache"
 print
 print "<!doctype html>"
 print "<html>"
