@@ -31,17 +31,11 @@ cgitb.enable(display=0, logdir=ldir)
 form = cgi.FieldStorage()
 
 print "Content-Type: text/html"
-print "Cache-Control: no-cache"
 print
 print "<!doctype html>"
 print "<html>"
 print "\t<head>"
 print '\t\t<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>'
-print '\t\t<meta http-equiv="cache-control" content="max-age=0"/>'
-print '\t\t<meta http-equiv="cache-control" content="no-cache"/>'
-print '\t\t<meta http-equiv="expires" content="0"/>'
-print '\t\t<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"/>'
-print '\t\t<meta http-equiv="pragma" content="no-cache"/>'
 print "\t\t<title>Test</title>"
 print "\t</head>"
 print "\t<body>"
@@ -82,7 +76,7 @@ if form.getvalue('submit'):
 else:
 	n = 1
 	hashtuple = ()
-	print '\t\t<form action="/cgi-bin/test" method="POST">'
+	print '\t\t<form action="/cgi-bin/test" method="POST" autocomplete="off">'
 	while getexistence(n):
 		f,i = getquestion(n)
 		hashtuple += (i,)
