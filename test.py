@@ -30,12 +30,12 @@ def gethash(i):
 cgitb.enable(display=0, logdir=ldir)
 form = cgi.FieldStorage()
 
-print "Content-Type: text/html\r"
-print "Cache-Control: no-cache, no-store, max-age=0, must-revalidate\r"
-print "Cache-Control: post-check=0, pre-check=0\r"
-print "Pragma: no-cache\r"
-print "Expires: Fri, 01 Jan 1990 00:00:00 GMT\r"
-print "\r"
+print "Content-Type: text/html"
+print "Cache-Control: no-cache, no-store, max-age=0, must-revalidate"
+print "Cache-Control: post-check=0, pre-check=0"
+print "Pragma: no-cache"
+print "Expires: Fri, 01 Jan 1990 00:00:00 GMT"
+print
 print "<!doctype html>"
 print "<html>"
 print "\t<head>"
