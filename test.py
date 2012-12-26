@@ -61,7 +61,8 @@ if form.getvalue('submit'):
 				surname = form.getvalue('surname')
 				#let's log without logging and without rotation
 				log = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')+\
-					' surname: '+surname+': result: '+str(k)+\
+					' hash: '+gethash(hashtuple)+': surname: '+surname+\
+					': result: '+str(k)+\
 					'/'+str(n-1)+' - '+str(100*k/float(n-1))+'%\n'
 				if exists(lfile) and (getsize(lfile) < 1024 * 1024):
 					open(lfile,'a+').write(log)
